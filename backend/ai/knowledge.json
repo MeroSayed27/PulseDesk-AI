@@ -1,0 +1,10 @@
+[
+  {"id":"payment_missing","title":"Missing payment","category":"billing","content":"For a missing payment, ask for the transaction date, amount, and payment reference. Check transaction status with the payments team. Do not promise a refund or confirm payment until verified."},
+  {"id":"refund_request","title":"Refund request","category":"billing","content":"For refund requests, collect the order or transaction reference, date, and reason. Confirm eligibility against the company's actual refund policy before promising an outcome."},
+  {"id":"login_reset","title":"Login and password reset","category":"account","content":"For login problems, ask the customer to use the password reset flow and verify account ownership via approved channels. Never ask for passwords or verification codes."},
+  {"id":"delivery_tracking","title":"Delivery tracking","category":"delivery","content":"For delivery problems, request the order number and tracking reference. Check the shipment status with the delivery provider before giving an ETA."},
+  {"id":"card_not_working","title":"Card not working","category":"billing","content":"If a card is declined or not working, verify that the customer has tried an alternative approved payment method. Never ask for full card numbers, CVV, or PIN."},
+  {"id":"account_verification","title":"Account verification","category":"account","content":"For account verification questions, direct the user to the official verification process. Never request identity documents in unapproved chat channels."},
+  {"id":"payment_ar","title":"استفسار عن دفعة","category":"billing","content":"إذا كانت الدفعة مفقودة، اطلب تاريخ المعاملة والمبلغ والرقم المرجعي. لا تؤكد وصول الدفعة قبل التحقق من حالتها عبر الفريق المختص."},
+  {"id":"login_ar","title":"مشكلة تسجيل الدخول","category":"account","content":"عند وجود مشكلة في تسجيل الدخول، اقترح إعادة تعيين كلمة المرور عبر القنوات الرسمية. لا تطلب كلمات المرور أو رموز التحقق من العميل."}
+]

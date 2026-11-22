@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1120" />
+  <title>PulseDesk AI — Human-centered support intelligence</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-icon" aria-hidden="true">✳</div><div><strong>PulseDesk <span>AI</span></strong><small>SUPPORT INTELLIGENCE</small></div></div>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#overview" class="nav-item active"><span class="nav-glyph">▦</span> Overview <span class="nav-pill">MVP</span></a>
+        <a href="#tickets" class="nav-item"><span class="nav-glyph">◫</span> Ticket queue</a>
+        <a href="#knowledge" class="nav-item"><span class="nav-glyph">◇</span> Knowledge base</a>
+        <a href="/docs" class="nav-item" target="_blank" rel="noopener"><span class="nav-glyph">⌘</span> API reference ↗</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="demo-label"><span class="status-dot"></span> Demo environment</div>
+        <p>Approval never sends an email. No authentication is included in this MVP.</p>
+        <div class="side-foot">v0.1 · Built with FastAPI + RAG</div>
+      </div>
+    </aside>
+    <main class="main" id="overview">
+      <header class="topbar">
+        <div class="crumb">Workspace <span>/</span> Overview</div>
+        <div class="topbar-right"><span id="model-status" class="model-status">Checking AI mode…</span><span class="avatar">PD</span></div>
+      </header>
+      <div class="content">
+        <div class="hero">
+          <div><span class="eyebrow">✦ HUMAN-IN-THE-LOOP AI</span><h1>Support, made <em>smarter.</em></h1><p>Turn incoming tickets into grounded, review-ready replies. Your team stays in control of every response.</p></div>
+          <div class="hero-art" aria-hidden="true"><div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div><div class="hero-core">✳</div></div>
+        </div>
+        <div class="stats" aria-label="Workspace statistics">
+          <div class="stat"><div class="stat-top">Total tickets <span class="mini-icon">◫</span></div><div id="metric-tickets" class="stat-num">—</div><div class="stat-note">Customer conversations</div></div>
+          <div class="stat"><div class="stat-top">Awaiting review <span class="mini-icon gold">◷</span></div><div id="metric-pending" class="stat-num">—</div><div class="stat-note">AI drafts pending approval</div></div>
+          <div class="stat"><div class="stat-top">Approved drafts <span class="mini-icon green">✓</span></div><div id="metric-approved" class="stat-num">—</div><div class="stat-note">Approved, never auto-sent</div></div>
+          <div class="stat"><div class="stat-top">Knowledge articles <span class="mini-icon violet">◇</span></div><div id="metric-knowledge" class="stat-num">—</div><div class="stat-note">Grounding the responses</div></div>
+        </div>
+        <div class="workspace-grid" id="tickets">
+          <section class="panel ticket-panel" aria-labelledby="tickets-heading">
+            <div class="panel-heading"><div><div class="section-eyebrow">INBOX</div><h2 id="tickets-heading">Ticket queue</h2><p>Create and select a customer request</p></div><span id="tickets-count" class="count-pill">0 tickets</span></div>
+            <form id="ticket-form" class="ticket-form">
+              <label for="subject">Subject</label><input id="subject" name="subject" maxlength="160" minlength="3" required placeholder="e.g. Missing payment" />
+              <label for="message">Customer message</label><textarea id="message" name="message" rows="3" minlength="8" maxlength="5000" required placeholder="Paste a customer message here…"></textarea>
+              <div class="form-actions"><button type="button" id="sample-btn" class="btn secondary">Use sample</button><button type="submit" id="create-btn" class="btn primary">+ Create ticket</button></div>
+            </form>
+            <div class="queue-label">RECENT REQUESTS</div>
+            <div id="ticket-list" class="ticket-list"><p class="empty">Loading tickets…</p></div>
+          </section>
+          <section class="panel detail-panel" aria-labelledby="draft-heading">
+            <div class="panel-heading"><div><div class="section-eyebrow">AI COPILOT</div><h2 id="draft-heading">Draft & review</h2><p>Retrieval → Gemini or template → approval</p></div><span class="review-icon">✳</span></div>
+            <div id="ticket-detail" class="detail-content"><div class="placeholder-state"><div class="placeholder-graphic">✧</div><h3>Select a ticket to begin</h3><p>Generate a suggested response using your knowledge base, then approve, edit, or reject it.</p></div></div>
+          </section>
+        </div>
+        <div class="bottom-grid" id="knowledge">
+          <section class="panel knowledge-panel"><div class="panel-heading"><div><div class="section-eyebrow">RETRIEVAL</div><h2>Knowledge base</h2><p>Source articles used to ground responses</p></div><span class="muted-icon">◇</span></div><div id="knowledge-list" class="knowledge-list"><p class="empty">Loading knowledge…</p></div></section>
+          <section class="panel insight-panel"><div class="panel-heading"><div><div class="section-eyebrow">ANALYTICS</div><h2>Ticket categories</h2><p>Rule-based broad support routing</p></div><span class="muted-icon">▥</span></div><div id="category-bars" class="category-bars"></div><div class="safety-note"><span class="safety-note-icon">ⓘ</span><div><strong>Human approval required</strong><p>Drafts are suggestions only. This demo never sends emails or contacts customers.</p></div></div></section>
+        </div>
+        <footer class="footer"><span>PulseDesk AI · Portfolio demo</span><span>FastAPI · SQLite · TF-IDF · Gemini (optional)</span></footer>
+      </div>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

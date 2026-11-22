@@ -1,0 +1,29 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.key
+*secret*.json
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+*.egg-info/
+# Local data and serialized models (use trusted, licensed artifacts only)
+backend/ml/data/
+*.joblib
+*.pkl
+# Runtime data
+*.db
+*.db-shm
+*.db-wal
+# Build and editor
+build/
+dist/
+.vscode/
+.idea/
+.DS_Store
+*.zip
